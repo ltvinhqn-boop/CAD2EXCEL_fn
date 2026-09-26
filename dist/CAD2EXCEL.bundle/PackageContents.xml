@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Autoloader bundle cho AutoCAD: copy thư mục CAD2EXCEL.bundle vào
+  %AppData%\Autodesk\ApplicationPlugins\  (hoặc %ProgramData%\Autodesk\ApplicationPlugins\ cho mọi người dùng)
+  → AutoCAD tự nạp plugin khi khởi động, không cần NETLOAD.
+-->
+<ApplicationPackage SchemaVersion="1.0"
+                    AppVersion="2.0.0"
+                    ProductCode="{4B9C2F1E-7D3A-4E8B-9C21-0A6E5D3B8F10}"
+                    UpgradeCode="{9E1D7C44-2B6F-4A0D-8E3C-5F7A1B2C3D4E}"
+                    Name="CAD2EXCEL"
+                    Description="Tạo bảng kê vật tư, xuất Excel theo mẫu (Microsoft Excel Interop), CSDL SQLite"
+                    Author="Vteams"
+                    ProductType="Application"
+                    SupportedLocales="Enu"
+                    AppNameSpace="com.vteams.cad2excel"
+                    OnlineDocumentation="https://github.com/ltvinhqn-boop/Cad2Excel">
+  <CompanyDetails Name="Vteams" Url="https://github.com/ltvinhqn-boop/Cad2Excel" />
+  <RuntimeRequirements OS="Win64" Platform="AutoCAD*" SeriesMin="R22.0" SeriesMax="R24.3" />
+  <Components Description="CAD2EXCEL plugin">
+    <RuntimeRequirements OS="Win64" Platform="AutoCAD*" SeriesMin="R22.0" SeriesMax="R24.3" />
+    <ComponentEntry AppName="CAD2EXCEL"
+                    Version="2.0.0"
+                    ModuleName="./Contents/CAD2EXCEL.dll"
+                    AppDescription="CAD2EXCEL - bảng kê vật tư và xuất Excel"
+                    LoadOnAutoCADStartup="True">
+      <Commands GroupName="CAD2EXCEL">
+        <Command Local="C2P" Global="C2P" />
+        <Command Local="C2E" Global="C2E" />
+        <Command Local="C2EX" Global="C2EX" />
+        <Command Local="RMT" Global="RMT" />
+        <Command Local="C2DB" Global="C2DB" />
+        <Command Local="C2SET" Global="C2SET" />
+        <Command Local="CAD2EXCEL" Global="CAD2EXCEL" />
+        <Command Local="C2RIBBON" Global="C2RIBBON" />
+      </Commands>
+    </ComponentEntry>
+  </Components>
+</ApplicationPackage>
